@@ -1,0 +1,121 @@
+Threads: 2
+Iterative Times (ms):
+Run 1: 2.705
+Run 2: 2.716
+Run 3: 2.741
+Run 4: 2.828
+Run 5: 2.659
+Run 6: 3.905
+Run 7: 2.732
+Run 8: 3.388
+Run 9: 3.885
+Run 10: 3.105
+Avg: 3.066
+
+Recursive Times (ms):
+Run 1: 2.481
+Run 2: 2.237
+Run 3: 2.401
+Run 4: 2.423
+Run 5: 2.396
+Run 6: 2.380
+Run 7: 2.363
+Run 8: 2.353
+Run 9: 2.504
+Run 10: 2.548
+Avg: 2.409
+
+----------------------------
+
+Threads: 4
+Iterative Times (ms):
+Run 1: 2.294
+Run 2: 1.999
+Run 3: 2.613
+Run 4: 2.865
+Run 5: 3.175
+Run 6: 2.817
+Run 7: 3.565
+Run 8: 3.555
+Run 9: 3.450
+Run 10: 2.363
+Avg: 2.870
+
+Recursive Times (ms):
+Run 1: 2.974
+Run 2: 2.989
+Run 3: 2.979
+Run 4: 2.986
+Run 5: 3.160
+Run 6: 2.980
+Run 7: 2.822
+Run 8: 2.799
+Run 9: 3.022
+Run 10: 3.194
+Avg: 2.990
+
+----------------------------
+
+Threads: 8
+Iterative Times (ms):
+Run 1: 6.921
+Run 2: 2.376
+Run 3: 8.156
+Run 4: 2.026
+Run 5: 2.014
+Run 6: 2.001
+Run 7: 2.022
+Run 8: 2.026
+Run 9: 1.992
+Run 10: 2.017
+Avg: 3.155
+
+Recursive Times (ms):
+Run 1: 6.150
+Run 2: 3.695
+Run 3: 4.139
+Run 4: 3.571
+Run 5: 3.584
+Run 6: 3.572
+Run 7: 3.582
+Run 8: 3.581
+Run 9: 3.560
+Run 10: 3.590
+Avg: 3.903
+
+----------------------------
+
+Threads: 16
+Iterative Times (ms):
+Run 1: 9.235
+Run 2: 3.452
+Run 3: 3.149
+Run 4: 3.553
+Run 5: 3.611
+Run 6: 3.485
+Run 7: 3.058
+Run 8: 3.745
+Run 9: 4.366
+Run 10: 4.062
+Avg: 4.172
+
+Recursive Times (ms):
+Run 1: 3.354
+Run 2: 2.997
+Run 3: 2.790
+Run 4: 2.888
+Run 5: 2.731
+Run 6: 2.606
+Run 7: 2.506
+Run 8: 2.620
+Run 9: 2.636
+Run 10: 3.403
+Avg: 2.853
+
+----------------------------
+
+Threads	Iterativo (ms)	Recursivo (ms)
+2	3.066		2.409
+4	2.870		2.990
+8	3.155		3.903
+16	4.172		2.853
