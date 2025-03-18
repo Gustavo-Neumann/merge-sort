@@ -7,12 +7,11 @@ import (
 	"merge-sort/recursive"
 	"os"
 	"runtime"
-	"sync"
 	"time"
 )
 
-const arraySize = 10000 // Tamanho do array para benchmark
-const runs = 10         // Número de execuções
+const arraySize = 10000
+const runs = 10
 
 func generateRandomArray(size int) []int {
 	arr := make([]int, size)
@@ -23,37 +22,25 @@ func generateRandomArray(size int) []int {
 }
 
 func runBenchmark(threads int) ([]time.Duration, []time.Duration) {
-	// Configurar o número de threads
 	oldMaxProcs := runtime.GOMAXPROCS(threads)
 	defer runtime.GOMAXPROCS(oldMaxProcs)
 
-	var wg sync.WaitGroup
 	iterativeTimes := make([]time.Duration, runs)
 	recursiveTimes := make([]time.Duration, runs)
 
 	for i := 0; i < runs; i++ {
-		arr1 := generateRandomArray(arraySize)
-		arr2 := make([]int, arraySize)
-		copy(arr2, arr1)
+		arr := generateRandomArray(arraySize)
 
-		wg.Add(2)
-		// Iterative
-		go func(index int) {
-			defer wg.Done()
-			start := time.Now()
-			iterative.MergeSort(arr1)
-			iterativeTimes[index] = time.Since(start)
-		}(i)
+		arrCopy := make([]int, arraySize)
+		copy(arrCopy, arr)
 
-		// Recursive
-		go func(index int) {
-			defer wg.Done()
-			start := time.Now()
-			recursive.MergeSort(arr2)
-			recursiveTimes[index] = time.Since(start)
-		}(i)
+		start := time.Now()
+		iterative.MergeSort(arr)
+		iterativeTimes[i] = time.Since(start)
 
-		wg.Wait()
+		start = time.Now()
+		recursive.MergeSort(arrCopy)
+		recursiveTimes[i] = time.Since(start)
 	}
 
 	return iterativeTimes, recursiveTimes
